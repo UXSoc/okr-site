@@ -1,0 +1,33 @@
+title: "Organization-wide OKRs"
+subtitle:
+  UXSociety's vision is to create a world where design speaks for itself.
+  This year, we are focusing on rapid member growth, expansion, and profit maximization
+  to support our vision for the future.
+okrs:
+  - title: "Member growth"
+    total_progress: 0.7
+    objectives:
+      - description: "(Active member defined: a member attending at least 50% of the events in one sem) 20% of our members are active members who attend at least 50% of events in one sem"
+        progress: 0.3
+      - description: "Get 250 members by RecWeek"
+        progress: 0.8
+      - description: "Get more members from UX-related (non-tech) courses by 35% of RecWeek recruitments Non-tech-based courses: Psy, Mgt courses, ID"
+        progress: 1.0
+  - title: "Increase profit"
+    total_progress: 0.2
+    objectives:
+      - description: "Consultancy: raise at least P150,000 by end of year"
+        progress: 0.4
+      - description: "Finance: raise P10,000 by end of year"
+        progress: 0.0
+  - title: "Expansion"
+    total_progress: 0.3
+    objectives:
+      - description: "LaSalle and UPD to set up a UXSoc by end of year"
+        progress: 0.0
+      - description: "20% of total attendees for every event are outsiders"
+        progress: 0.0
+      - description: "3 leads (people who approach UXSociety to set up a community) by the end of the year"
+        progress: 0.4
+      - description: "2 roadshows for the year"
+        progress: 1.0

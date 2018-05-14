@@ -1,0 +1,82 @@
+<!-- FlatFy Theme - Andrea Galanti /-->
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><html lang="{{ .Site.LanguageCode }}" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><![endif]-->
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body id="home" style="overflow: visible;">
+
+{{ partial "fullscreen.html" . }}
+
+{{ partial "nav.html" . }}
+
+{{ partial "whatis.html" . }}
+
+<!-- Use it -->
+<div id="orgwide" class="content-section-a">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 wow fadeInLeftBig" data-animation-delay="200"
+                 style="visibility: hidden; animation-name: none;">
+                <h3 class="section-heading">{{ .Site.Data.orgwide.orgwide.title }}</h3>
+                <p class="lead">{{ .Site.Data.orgwide.orgwide.subtitle }}</p>
+            </div>
+            <div class="col-md-6" data-animation-delay="200" id="container">
+                {{ range $okr := .Site.Data.orgwide.orgwide.okrs }}
+                <h4>{{ $okr.title }}</h4>
+                <div class="progress-bar-container">{{ $okr.total_progress }}
+                    <div class="progress">
+                        <div style="width: {{ mul $okr.total_progress 100 }}%;" class="progress-bar {{ if lt $okr.total_progress 0.7 }}progress-bar-danger{{ else }}progress-bar-success{{ end }}"
+                             role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <hr class="bigHR">
+                {{ range $okr.objectives }}
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">{{ .progress }}</div>
+                </div>
+                <div class="key"><h6>{{ .description }}</h6></div>
+                {{ end }}
+                {{ end }}
+            </div>
+
+            <!-- Alternative button to below -->
+            <div class="content-section-d"
+                 style="width: 100%; padding-top: 30px; padding-bottom: 40px; text-align: center; background-color:#f8f8f8;">
+                <a class="btn btn-info btn-lg" href="https://uxsociety.org/okr/department.html">
+                    View Department OKRs</a>
+            </div>
+
+
+            <!-- problem: kapag inalis to, nawawala yung navbar sa taas di ko alam paano aayusin :( -->
+            <div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1 animated animated"
+                 style="display: none; visibility: visible;">
+                <button type="button" style="display:none;"><span>View Department OKRs</span></button>
+                <div class="morph-content" style="display:none;">
+                    <div>
+                        <a href="{{ .Site.BaseURL }}/department" style="display:none;">
+                            <div class="content-style-form content-style-form-4" style="display:none;">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Action Button -->
+            <div class="fixed-action-btn">
+                <div>
+                    <a class="btn-floating" href="{{ .Site.BaseURL }}/department">
+                        <img class="fixedbtn" src="{{ .Site.BaseURL }}/img/circle-right.png"
+                             style="max-width: 100%; height:auto;">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

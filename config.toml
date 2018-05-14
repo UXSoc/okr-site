@@ -1,0 +1,18 @@
+baseURL = "localhost:1313"
+languageCode = "en-us"
+title = "UXSociety OKRs"
+theme = "okr-theme"
+
+[params]
+    theme_color = "#ec3558"
+    favicon = "logo.png"
+    og_image = "https://cdn.dribbble.com/users/1044993/screenshots/3584874/monkey-reading_dribbble.png"
+    description = "A no non-sense guide to UX EB positions. Apply to be an EB at UX Society."
+    hero_text = 'You have stumbled upon our <span style="color: white;">no-nonsense guide to UX Society EB positions.</span> May these guidelines serve you well from application to appointment.'
+
+[params.nav]
+    enable = true
+    title = "EB Primer"
+    brand = "logo.png"
+    cta_text = "APPLY"
+    cta_link = "https://uxsociety.org/apps/"
