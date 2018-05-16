@@ -1,57 +1,31 @@
 <!-- FlatFy Theme - Andrea Galanti /-->
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!-->
-<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head>
+{{ partial "iechecks.html" . }}
+<head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="User Experience Society OKRs">
     <meta name="author" content="">
-
     <title>UXSociety OKRs</title>
-
-    <!-- Bootstrap core CSS -->
     <link href="{{ .Site.BaseURL }}/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom Google Web Font -->
     <link href="{{ .Site.BaseURL }}/css/font-awesome.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
     <link href="{{ .Site.BaseURL }}/css/css_002.css" rel="stylesheet" type="text/css">
     <link href="{{ .Site.BaseURL }}/css/css.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom CSS-->
     <link href="{{ .Site.BaseURL }}/css/general.css" rel="stylesheet">
-
-    <!-- Owl-Carousel -->
     <link href="{{ .Site.BaseURL }}/css/custom.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}/css/owl_002.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}/css/owl.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}/css/style.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}/css/animate.css" rel="stylesheet">
-
-    <!-- Magnific Popup core CSS file -->
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/magnific-popup.css">
-    <link rel="icon" type="image/png" href="https://uxsociety.org/okr/img/blue.png">
-
-
-    <script src="{{ .Site.BaseURL }}/js/modernizr-2.js"></script>  <!-- Modernizr /-->
-    <!--[if IE 9]>
-    <script src="{{ .Site.BaseURL }}/js/PIE_IE9.js"></script>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="{{ .Site.BaseURL }}/js/PIE_IE678.js"></script>
-    <![endif]-->
-
-    <!--[if lt IE 9]>
-    <script src="{{ .Site.BaseURL }}/js/html5shiv.js"></script>
-    <![endif]-->
-
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}/img/blue.png">
+    <script src="{{ .Site.BaseURL }}/js/modernizr-2.js"></script>
+    <!--[if IE 9]><script src="{{ .Site.BaseURL }}/js/PIE_IE9.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="{{ .Site.BaseURL }}/js/PIE_IE678.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="{{ .Site.BaseURL }}/js/html5shiv.js"></script><![endif]-->
 </head>
-
 <body id="home" style="overflow: visible;">
 <!-- NavBar-->
 <nav class="navbar-default stuckMenu" role="navigation">
@@ -63,11 +37,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="https://uxsociety.org/okr/index.html"><img id="navlogo" src="{{ .Site.BaseURL }}/css/navlogo.png"></a>
+            <a class="brand" href="{{ .Site.BaseURL }}"><img id="navlogo" src="{{ .Site.BaseURL }}/img/navlogo.png"></a>
         </div>
 
         <div class="collapse navbar-collapse navbar-center navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                <!--TODO Making them pages-->
                 <li class="menuItem"><a href="#consultancy">Consultancy</a></li>
                 <li class="menuItem"><a href="#engineering">Engineering</a></li>
                 <li class="menuItem"><a href="#operations">Operations</a></li>
@@ -102,7 +77,67 @@
 
             <div class="col-md-6" data-animation-delay="200" id="consultancy-okr">
                 <!-- Javascript will fill this out-->
-                <h4>Consultancy Model</h4><div class="progress-bar-container">0.1<div class="progress"><div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.1</div></div><div class="key"><h6>Generate P150,000 in revenue for the organization</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.2</div></div><div class="key"><h6>Get at least 7 clients for consultancy portfolio</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.0</div></div><div class="key"><h6>Write 3 case studies (based on top clients)</h6></div><h4>Content Creation</h4><div class="progress-bar-container">0.1<div class="progress"><div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.4</div></div><div class="key"><h6>Get 400 subscriptions for the newsletter</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.0</div></div><div class="key"><h6>5-10 contributors on the blog</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.0</div></div><div class="key"><h6>2000 unique views for the official blog a year</h6></div><h4>Mentorship</h4><div class="progress-bar-container">0.1<div class="progress"><div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.2</div></div><div class="key"><h6>Build a mentor pool of at least 15 mentors</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>At least 8 workshops for the year</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>Create training curriculum for UXSoc by the end of the first semester</h6></div></div>
+                <h4>Consultancy Model</h4>
+                <div class="progress-bar-container">0.1
+                    <div class="progress">
+                        <div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger"
+                             role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <hr class="bigHR">
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0.1</div>
+                </div>
+                <div class="key"><h6>Generate P150,000 in revenue for the organization</h6></div>
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0.2</div>
+                </div>
+                <div class="key"><h6>Get at least 7 clients for consultancy portfolio</h6></div>
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0.0</div>
+                </div>
+                <div class="key"><h6>Write 3 case studies (based on top clients)</h6></div>
+                <h4>Content Creation</h4>
+                <div class="progress-bar-container">0.1
+                    <div class="progress">
+                        <div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger"
+                             role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <hr class="bigHR">
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0.4</div>
+                </div>
+                <div class="key"><h6>Get 400 subscriptions for the newsletter</h6></div>
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0.0</div>
+                </div>
+                <div class="key"><h6>5-10 contributors on the blog</h6></div>
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0.0</div>
+                </div>
+                <div class="key"><h6>2000 unique views for the official blog a year</h6></div>
+                <h4>Mentorship</h4>
+                <div class="progress-bar-container">0.1
+                    <div class="progress">
+                        <div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger"
+                             role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <hr class="bigHR">
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0.2</div>
+                </div>
+                <div class="key"><h6>Build a mentor pool of at least 15 mentors</h6></div>
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0</div>
+                </div>
+                <div class="key"><h6>At least 8 workshops for the year</h6></div>
+                <div class="progress-bar-title">
+                    <div class="progress-bar-text">0</div>
+                </div>
+                <div class="key"><h6>Create training curriculum for UXSoc by the end of the first semester</h6></div>
+            </div>
         </div>
     </div>
     <!-- /.container -->
