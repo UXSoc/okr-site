@@ -1,0 +1,40 @@
+weight: 7
+long_title: "Multimedia Department"
+short_title: "Multimedia"
+logo: "multimedia.png"
+description: >
+            The Multimedia Department is a department that focuses on
+            creating graphics and presentations in audio-visual format
+            for purposes of marketing, documentation, formal instruction,
+            and other needs when they arise. Involving itself in UXSociety
+            events, UX trends, and community related happenings, it
+            primarily identifies as a division of creatives dedicated
+            to transforming their imagination into design and screenplay.
+okrs:
+  - title: "Teach & train students"
+    total_progress: "0.0"
+    objectives:
+      - description: "Educate at least 80 people in branding & creative design through tutorials and workshops"
+        progress: "0.0"
+      - description: "Have at least 5 internal events to teach & train (3 tutorials, 2 workshops) (tie-in with Branding)"
+        progress: "0.0"
+      - description: "At least 75% have basic knowledge of multimedia software (Premiere Pro, After Effects, Photoshop)"
+        progress: "0.0"
+  - title: "Expanding the reach of promotional materials"
+    total_progress: "1.0"
+    objectives:
+      - description: "All events are branded, and at least 80% of the major events complete the multimedia promotions checklist"
+        progress: "1.0"
+      - description: "At least 750 organic reach on Facebook for main events (external)"
+        progress: "1.0"
+      - description: "At least 1500 views per video"
+        progress: "1.0"
+  - title: "Explore different types of videos"
+    total_progress: "0.2"
+    objectives:
+      - description: "Document & produce a post-event video for 80% of main events"
+        progress: "0.6"
+      - description: "At least 25% of multimedia materials are infographics/tutorials"
+        progress: "0.0"
+      - description: "At least 10% of multimedia materials are to promote services (case studies)"
+        progress: "0.0"

@@ -1,0 +1,28 @@
+weight: 6
+long_title: "Community Management Department"
+short_title: "Community Management"
+logo: "community.png"
+description: >
+            The Community Management team oversees and supports the
+            operations of UX Society in Ateneo and of newly established
+            local chapters in the country. Team members are expected to
+            participate in (fun) events and gatherings, harness leads of
+            potential partners and entrench visibility to local communities
+            through content creation and social-media management.
+okrs:
+  - title: "Establishment of department structure and definitions"
+    total_progress: "0.5"
+    objectives:
+      - description: "Department members' goals and objectives alignment"
+        progress: "1.0"
+      - description: "Department members' enrichment programs"
+        progress: "0.0"
+  - title: "Identification of key activities"
+    total_progress: "0.2"
+    objectives:
+      - description: "UX-community mapping: Gatherings and online communities"
+        progress: "0.2"
+      - description: "CM Programs: member features"
+        progress: "0.1"
+      - description: "Partnerships: University clubs and external organizations"
+        progress: "0.2"

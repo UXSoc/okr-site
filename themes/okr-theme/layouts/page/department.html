@@ -42,359 +42,63 @@
 
         <div class="collapse navbar-collapse navbar-center navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <!--TODO Making them pages-->
-                <li class="menuItem"><a href="#consultancy">Consultancy</a></li>
-                <li class="menuItem"><a href="#engineering">Engineering</a></li>
-                <li class="menuItem"><a href="#operations">Operations</a></li>
-                <li class="menuItem"><a href="#branding">Branding</a></li>
-                <li class="menuItem"><a href="#events">Events</a></li>
-                <li class="menuItem"><a href="#community">Community Management</a></li>
-                <li class="menuItem"><a href="#multimedia">Multimedia</a></li>
-                <li class="menuItem"><a href="#finance">Finance</a></li>
-                <li class="menuItem"><a href="#marketing">Marketing</a></li>
+                {{ range $department := .Site.Data.departments }}
+                <li class="menuItem"><a href="#{{ lower $department.title }}">{{ $department.short_title }}</a></li>
+                {{ end }}
             </ul>
         </div>
     </div>
 </nav>
 
-
-<!-- Consultancy Department-->
-<div id="consultancy" class="content-section-b" style="border-top: 0;margin-top: -70px;">
+{{ range $department := .Site.Data.departments }}
+<div id="{{ lower $department.title }}" {{ if not (modBool $department.weight 2) }}class="content-section-b"{{else}}class="content-section-a"{{end}} style="border-top:0; {{ if eq $department.weight 1 }} margin-top:-70px;{{end}}">
     <div class="container">
         <div class="row">
             <div class="col-md-6 wow fadeInLeftBig animated animated" data-animation-delay="200" style="visibility: visible;">
-                <img src="{{ .Site.BaseURL }}/img/consultancy.png" class="deptlogo">
-                <h3 class="section-heading">Consultancy Department</h3>
-                <p class="lead">
-                    The UX Consultancy and Blog department is the solutions and
-                    knowledge management center of User Experience Society. It focuses on
-                    three important areas: the application of UX design methodologies
-                    through the adoption of a UX consultancy model, the formation of members
-                    in UX Strategy, and the cultivation of UX knowledge through content
-                    strategy.
-                </p>
+                <img src="{{ .Site.BaseURL }}/img/{{ $department.logo }}" class="deptlogo">
+                <h3 class="section-heading">{{ $department.long_title }}</h3>
+                <p class="lead">{{ $department.description }}</p>
             </div>
-
             <div class="col-md-6" data-animation-delay="200" id="consultancy-okr">
-                <!-- Javascript will fill this out-->
-                <h4>Consultancy Model</h4>
-                <div class="progress-bar-container">0.1
+                {{ range $okr := $department.okrs }}
+                <h4>{{ $okr.title }}</h4>
+                <div class="progress-bar-container">{{ $okr.total_progress }}
                     <div class="progress">
-                        <div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger"
+                        {{ if eq $okr.total_progress "n/a" }}
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        {{ else }}
+                        {{ $progress := float $okr.total_progress }}
+                        <div style="width: {{ mul $progress 100 }}%;" class="progress-bar {{ if lt $okr.total_progress 0.7 }}progress-bar-danger{{ else }}progress-bar-success{{ end }}"
                              role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        {{ end }}
                     </div>
                 </div>
                 <hr class="bigHR">
+                {{ range $okr.objectives }}
                 <div class="progress-bar-title">
-                    <div class="progress-bar-text">0.1</div>
+                    <div class="progress-bar-text">{{ .progress }}</div>
                 </div>
-                <div class="key"><h6>Generate P150,000 in revenue for the organization</h6></div>
-                <div class="progress-bar-title">
-                    <div class="progress-bar-text">0.2</div>
-                </div>
-                <div class="key"><h6>Get at least 7 clients for consultancy portfolio</h6></div>
-                <div class="progress-bar-title">
-                    <div class="progress-bar-text">0.0</div>
-                </div>
-                <div class="key"><h6>Write 3 case studies (based on top clients)</h6></div>
-                <h4>Content Creation</h4>
-                <div class="progress-bar-container">0.1
-                    <div class="progress">
-                        <div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger"
-                             role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <hr class="bigHR">
-                <div class="progress-bar-title">
-                    <div class="progress-bar-text">0.4</div>
-                </div>
-                <div class="key"><h6>Get 400 subscriptions for the newsletter</h6></div>
-                <div class="progress-bar-title">
-                    <div class="progress-bar-text">0.0</div>
-                </div>
-                <div class="key"><h6>5-10 contributors on the blog</h6></div>
-                <div class="progress-bar-title">
-                    <div class="progress-bar-text">0.0</div>
-                </div>
-                <div class="key"><h6>2000 unique views for the official blog a year</h6></div>
-                <h4>Mentorship</h4>
-                <div class="progress-bar-container">0.1
-                    <div class="progress">
-                        <div data-percentage="50%" style="width: 10%;" class="progress-bar progress-bar-danger"
-                             role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <hr class="bigHR">
-                <div class="progress-bar-title">
-                    <div class="progress-bar-text">0.2</div>
-                </div>
-                <div class="key"><h6>Build a mentor pool of at least 15 mentors</h6></div>
-                <div class="progress-bar-title">
-                    <div class="progress-bar-text">0</div>
-                </div>
-                <div class="key"><h6>At least 8 workshops for the year</h6></div>
-                <div class="progress-bar-title">
-                    <div class="progress-bar-text">0</div>
-                </div>
-                <div class="key"><h6>Create training curriculum for UXSoc by the end of the first semester</h6></div>
+                <div class="key"><h6>{{ .description }}</h6></div>
+                {{ end }}
+                {{ end }}
             </div>
         </div>
     </div>
-    <!-- /.container -->
 </div>
-
-<!-- /.Consultancy Department-->
-
-<!-- Engineering Department -->
-<div id="engineering" class="content-section-a" style="border-top: 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig animated animated" data-animation-delay="200" style="visibility: visible;">
-                <img src="{{ .Site.BaseURL }}/img/engineering.png" class="deptlogo">
-                <h3 class="section-heading">Engineering Department</h3>
-                <p class="lead">
-                    The Engineering Department is the developer pool of
-                    the organization. It will focus on the implementation of the products
-                    conceptualized by the Consultancy Department. The department will also
-                    handle the upkeep of the digital assets of the organization, mainly the
-                    blog and the website.
-                </p>
-            </div>
-
-            <div class="col-md-6" data-animation-delay="200" id="engineering-okr">
-
-                <h4>Pique interest in Dev</h4><div class="progress-bar-container">0.3<div class="progress"><div data-percentage="50%" style="width: 30%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.6</div></div><div class="key"><h6>Observable through Consistency in training workshops</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.0</div></div><div class="key"><h6>At least 50% makapag pasa</h6></div></div>
-        </div>
-    </div>
-</div>
-<!-- /.container -->
-
-
-<!-- /.Engineering Department -->
-
-<!-- Operations Department -->
-<div id="operations" class="content-section-b" style="border-top: 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig" data-animation-delay="200" style="visibility: hidden; animation-name: none;">
-                <img src="{{ .Site.BaseURL }}/img/operations.png" class="deptlogo">
-                <h3 class="section-heading">Operations Department</h3>
-                <p class="lead">
-                    The Operations Department ensures that member involvement and
-                    evaluations analyses are properly handled. It is headed by the
-                    Documentations and Analysis Director who closely works with the other
-                    departments of the organization and assesses whether those departments
-                    are achieving their objectives. He also maintains the organization’s
-                    files and assesses organizational weak spots based on departmental
-                    consultations and feedbacks. Under the Documentations and Analysis
-                    Director is the Associate Director for Documentations and Analysis and
-                    the Associate Director for Member Involvement.
-                </p>
-            </div>
-
-            <div class="col-md-6" data-animation-delay="200" id="operations-okr">
-
-
-                <h4>Member involvement system</h4><div class="progress-bar-container">0.0<div class="progress"><div data-percentage="50%" style="width: 0%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.0</div></div><div class="key"><h6>Continue peer recognition system</h6></div><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Install an attedance tracker for members who are attending events and recognize their achivements/loyalty</h6></div><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>80% of all UXSoc Family members were given birthday posters</h6></div><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Schedule individual consultations with EB, AD, and Officers</h6></div><h4>Improve and maintain evalutions systems</h4><div class="progress-bar-container">0.8<div class="progress"><div data-percentage="50%" style="width: 80%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.6</div></div><div class="key"><h6>Evaluations were collected from 80% of attendees per event for all events</h6></div><div class="progress-bar-title"><div class="progress-bar-text">1.0</div></div><div class="key"><h6>50% of all events get above 9 average (using Net Promotor Score)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.7</div></div><div class="key"><h6>Emotion scale ratings (new for 2017) reach an average of 70% "Excellent"</h6></div><h4>Maintain transparency in the organization</h4><div class="progress-bar-container">1.0<div class="progress"><div data-percentage="50%" style="width: 100%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">1.0</div></div><div class="key"><h6>Department processes from the nine departments are to be documented</h6></div><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Biweekly updates are regularly biweekly</h6></div></div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-
-<!-- /.Operations Depratment -->
-
-<!-- Branding Department -->
-<div id="branding" class="content-section-a" style="border-top: 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig" data-animation-delay="200" style="visibility: hidden; animation-name: none;">
-                <img src="{{ .Site.BaseURL }}/img/branding.png" class="deptlogo">
-                <h3 class="section-heading">Branding Department</h3>
-                <p class="lead">
-                    The Branding and Creatives Department oversees all creative
-                    materials and social media accounts of the organization. In order to
-                    maintain a consistent image of User Experience Society, the department
-                    ensures branding is properly implemented across all projects and
-                    products, and collaborates with affected departments. It is also
-                    responsible for boosting the organization’s exposure and online presence
-                    through beautifully and strategically designed promotional materials.
-                </p>
-            </div>
-
-            <div class="col-md-6" data-animation-delay="200" id="branding-okr">
-
-
-                <h4>Successful branding implementation &amp; promotions</h4><div class="progress-bar-container">0.9<div class="progress"><div data-percentage="50%" style="width: 90%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">1.0</div></div><div class="key"><h6>All events are branded, and at least 80% of the major events complete the social media and promotions checklist</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.9</div></div><div class="key"><h6>At least 8/10 average evaluation score for all events</h6></div><div class="progress-bar-title"><div class="progress-bar-text">1.0</div></div><div class="key"><h6>At least 750 organic reach on Facebook for main events (external)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.5</div></div><div class="key"><h6>Innovative
-                promotions (introduce social listening, announcements, infographics,
-                &amp; non traditional promotions within the year)</h6></div><h4>Teach and train students</h4><div class="progress-bar-container">0<div class="progress"><div data-percentage="50%" style="width: 0%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>Educate at least 80 people in branding &amp; creative design through tutorials and workshops</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>Have at least 5 internal events to teach &amp; train (3 tutorials, 2 workshops) (tie-in with Multimedia)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>At least 80% of junior designers become senior designers by the end of the year (to be evaluated by senior designers)</h6></div><h4>Boost social media following &amp; engagement</h4><div class="progress-bar-container">n/a<div class="progress"><div data-percentage="50%" style="width: NaN%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Reach 2200 Facebook likes by the end of the year</h6></div><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Reach 300 Twitter followers and at least 10% engagement</h6></div><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Reach 300 Instagram followers</h6></div></div>
-        </div>
-        <!-- /.container -->
-    </div>
-</div>
-<!-- /.Branding Department -->
-
-<!-- Events Departmeng -->
-<div id="events" class="content-section-b" style="border-top: 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig" data-animation-delay="200" style="visibility: hidden; animation-name: none;">
-                <img src="{{ .Site.BaseURL }}/img/events.png" class="deptlogo">
-                <h3 class="section-heading">Events Department</h3>
-                <p class="lead">
-                    The Events Department manages the events that the organization
-                    implements throughout the school year. The department leads the
-                    promotion of member involvement, participation, development and
-                    organization growth through the various events it carries out. The
-                    department ensures that the organization holds well planned and
-                    organized events with the goal of bringing the organization towards its
-                    vision.
-                </p>
-            </div>
-
-            <div class="col-md-6" data-animation-delay="200" id="events-okr">
-
-                <h4>Improve quality of events</h4><div class="progress-bar-container">0.7<div class="progress"><div data-percentage="50%" style="width: 70%;" class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.2</div></div><div class="key"><h6>At
-                least 6 – 7 new projects for the whole year (Hackathon/Competition,
-                Training/Workshops, Officer Training, Networking, UX Week, Master class,
-                UST collaboration, UX Roadshow)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>At least 30 – 50 participants per event (participants: including outsiders and professionals)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.5</div></div><div class="key"><h6>At least 9 Net Promoter Score per event</h6></div><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>Create an activity manual</h6></div><h4>Collaboration</h4><div class="progress-bar-container">0<div class="progress"><div data-percentage="50%" style="width: 0%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>At least 5 – 10 participants are from partner organizations</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>At least 3 – 4 partner organizations for trainings and workshops (At least one outside organization)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>At least 2 events where members benefit from the corporate partnerships</h6></div></div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-
-<!-- /.Events Department -->
-
-
-<!-- Community Management Department -->
-<div id="community" class="content-section-a" style="border-top: 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig" data-animation-delay="200" style="visibility: hidden; animation-name: none;">
-                <img src="{{ .Site.BaseURL }}/img/community.png" class="deptlogo">
-                <h3 class="section-heading">Community Management Department</h3>
-                <p class="lead">
-                    The Community Management team oversees and supports the operations
-                    of UX Society in Ateneo and of newly established local chapters in the
-                    country. Team members are expected to participate in (fun) events and
-                    gatherings, harness leads of potential partners and entrench visibility
-                    to local communities through content creation and social-media
-                    management.
-                </p>
-            </div>
-
-            <div class="col-md-6" data-animation-delay="200" id="community-okr">
-
-                <h4>Establishment of department structure and definitions</h4><div class="progress-bar-container">0.5<div class="progress"><div data-percentage="50%" style="width: 50%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>Department members' goals and objectives alignment</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>Department members' enrichment programs</h6></div><h4>Identification of key activities</h4><div class="progress-bar-container">0.2<div class="progress"><div data-percentage="50%" style="width: 20%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.2</div></div><div class="key"><h6>UX-community mapping: Gatherings and online communities</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.1</div></div><div class="key"><h6>CM Programs: member features</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.2</div></div><div class="key"><h6>Partnerships: University clubs and external organizations</h6></div></div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-
-<!-- /.Community Management Department -->
-
-<!-- Multimedia Department -->
-<div id="multimedia" class="content-section-b" style="border-top: 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig" data-animation-delay="200" style="visibility: hidden; animation-name: none;">
-                <img src="{{ .Site.BaseURL }}/img/multimedia.png" class="deptlogo">
-                <h3 class="section-heading">Multimedia Department</h3>
-                <p class="lead">
-                    The Multimedia Department is a department that focuses on creating
-                    graphics and presentations in audio-visual format for purposes of
-                    marketing, documentation, formal instruction, and other needs when they
-                    arise. Involving itself in UXSociety events, UX trends, and community
-                    related happenings, it primarily identifies as a division of creatives
-                    dedicated to transforming their imagination into design and screenplay.
-                </p>
-            </div>
-
-            <div class="col-md-6" data-animation-delay="200" id="multimedia-okr">
-
-                <h4>Teach &amp; train students </h4><div class="progress-bar-container">0<div class="progress"><div data-percentage="50%" style="width: 0%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>Educate at least 80 people in branding &amp; creative design through tutorials and workshops</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>Have at least 5 internal events to teach &amp; train (3 tutorials, 2 workshops) (tie-in with Branding)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>At least 75% have basic knowledge of multimedia software (Premiere Pro, After Effects, Photoshop)</h6></div><h4>Expanding the reach of promotional materials</h4><div class="progress-bar-container">1<div class="progress"><div data-percentage="50%" style="width: 100%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>All events are branded, and at least 80% of the major events complete the multimedia promotions checklist</h6></div><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>At least 750 organic reach on Facebook for main events (external)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>At least 1500 views per video</h6></div><h4>Explore different types of videos</h4><div class="progress-bar-container">0.2<div class="progress"><div data-percentage="50%" style="width: 20%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.6</div></div><div class="key"><h6>Document &amp; produce a post-event video for 80% of main events</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>At least 25% of multimedia materials are infographics/tutorials</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0</div></div><div class="key"><h6>At least 10% of multimedia materials are to promote services (case studies)</h6></div></div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-
-<!-- /.Multimedia Department -->
-
-<!-- Finance Department -->
-<div id="finance" class="content-section-a" style="border-top: 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig" data-animation-delay="200" style="visibility: hidden; animation-name: none;">
-                <img src="{{ .Site.BaseURL }}/img/finance.png" class="deptlogo">
-                <h3 class="section-heading">Finance Department</h3>
-                <p class="lead">
-                    The Finance Department is the money management department of the
-                    organization - it tracks and records all the financial transactions of
-                    every department within the organization. The Finance Department ensures
-                    that the organization generates money to fund its projects, support its
-                    members’ initiatives and efforts, and cover all the expenses of the
-                    organization. The Finance Department promotes honesty, integrity, and
-                    transparency in the entirety of its operation.
-                </p>
-            </div>
-
-            <div class="col-md-6" data-animation-delay="200" id="finance-okr">
-                <h4>Track the funds of the organization</h4><div class="progress-bar-container">0.2<div class="progress"><div data-percentage="50%" style="width: 20%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.9</div></div><div class="key"><h6>Uniform and complete financial tracker for the entire organization.</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.6</div></div><div class="key"><h6>Have a physical and digital (online &amp; offline) copy of the flow of money/receipts.</h6></div><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Create a bank account for the organization. </h6></div><h4>Have a profit of P10, 000 for the rest of the semester.</h4><div class="progress-bar-container">n/a<div class="progress"><div data-percentage="50%" style="width: NaN%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Nothing less than breakeven per effort.</h6></div><div class="progress-bar-title"><div class="progress-bar-text">n/a</div></div><div class="key"><h6>Have at least two fundraisers per semester.</h6></div></div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-
-<!-- /.Finance Department -->
-
-
-<!-- Marketing Department -->
-<div id="marketing" class="content-section-b" style="border-top: 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeftBig" data-animation-delay="200" style="visibility: hidden; animation-name: none;">
-                <img src="{{ .Site.BaseURL }}/img/marketing.png" class="deptlogo">
-                <h3 class="section-heading">Marketing Department</h3>
-                <p class="lead">
-                    The Marketing Department has the overall responsibility to boost
-                    external organizational growth and revenue by promoting the products,
-                    events, and services of this organization to its members and potential
-                    partner organizations. It is also responsible for contacting and
-                    establishing strong relations with organizations inside and outside of
-                    the campus. Moreover, it aims to ensure that each event of this
-                    organization is backed by different partner organizations and corporate
-                    sponsorships.
-                </p>
-            </div>
-
-            <div class="col-md-6" data-animation-delay="200" id="marketing-okr">
-
-                <h4>Complete the Marketing Kit</h4><div class="progress-bar-container">1<div class="progress"><div data-percentage="50%" style="width: 100%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>Create a Marketing Package and Sponsorship Letter Template</h6></div><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>Create a Memorandum of Agreement</h6></div><div class="progress-bar-title"><div class="progress-bar-text">1</div></div><div class="key"><h6>Create a Sponsorships Database (with at least 500 contact details)</h6></div><h4>Ensure support for Events initiatives</h4><div class="progress-bar-container">0.7<div class="progress"><div data-percentage="50%" style="width: 70%;" class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div></div><hr class="bigHR"><div class="progress-bar-title"><div class="progress-bar-text">0.5</div></div><div class="key"><h6>Provide
-                at least 5 corporate partners for every major event (major event
-                described as expecting at least 50 attendees, needing mobilization
-                outside of campus, or other events deemed major by the EB) (Provided
-                List of Major Events by Mr. Pascasio: Hackathon, Master Class, UX
-                Roadshow)</h6></div><div class="progress-bar-title"><div class="progress-bar-text">0.8</div></div><div class="key"><h6>Provide at least 3 university-related partners for every event (both major and minor)</h6></div></div>
-        </div>
-    </div>
-    <!-- /.container -->
-</div>
-<!-- /.Marketing Department -->
+{{ end }}
 
 <!-- Alternative button to below -->
 <div style="width: 100%; margin-top: 30px; margin-bottom: 40px;  text-align: center;">
-    <a class="btn btn-info btn-lg" href="https://uxsociety.org/okr/index.html">
+    <a class="btn btn-info btn-lg" href="{{ .Site.BaseURL }}">
         View Organization-wide OKRs</a>
 </div>
-
-
-
 
 <!-- problem: kapag inalis to, nawawala yung navbar sa taas di ko alam paano aayusin :( -->
 <div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1 animated animated" style="display: none; visibility: visible;">
     <button type="button" style="display:none;"><span>View Department OKRs</span></button>
     <div class="morph-content" style="display:none;">
         <div>
-            <a href="https://uxsociety.org/okr/department.html" style="display:none;">
+            <a href="{{ .Site.BaseURL }}/department.html" style="display:none;">
                 <div class="content-style-form content-style-form-4" style="display:none;">
                 </div>
             </a>
@@ -405,32 +109,20 @@
 <!-- Floating Action Button -->
 <div class="fixed-action-btn">
     <div>
-        <a class="btn-floating" href="https://uxsociety.org/okr/index.html">
+        <a class="btn-floating" href="{{ .Site.BaseURL }}">
             <img src="{{ .Site.BaseURL }}/img/circle-left.png" style="max-width: 100%; height:auto;">
         </a>
     </div>
 </div>
 
-
-
-
-
 <!-- JavaScript -->
-
 <script src="{{ .Site.BaseURL }}/js/jquery-1.js"></script>
 <script src="{{ .Site.BaseURL }}/js/bootstrap.js"></script>
 <script src="{{ .Site.BaseURL }}/js/owl.js"></script>
 <script src="{{ .Site.BaseURL }}/js/script.js"></script>
 <!-- StikyMenu -->
 <script src="{{ .Site.BaseURL }}/js/stickUp.js"></script>
-
 <!--<script type="text/javascript" src="{{ .Site.BaseURL }}/js/matthew.js"></script>-->
-
-
-
-
-
-
 <script type="text/javascript">
     jQuery(function($) {
         $(document).ready( function() {
@@ -448,10 +140,7 @@
     });
 </script>
 <!--<script>-->
-
-
     <!--grab();-->
-
 <!--</script>-->
 <!-- Smoothscroll -->
 <script type="text/javascript" src="{{ .Site.BaseURL }}/js/jquery_002.js"></script>

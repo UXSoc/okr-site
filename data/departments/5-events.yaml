@@ -1,0 +1,31 @@
+weight: 5
+long_title: "Events Department"
+short_title: "Events"
+logo: "events.png"
+description: >
+            The Events Department manages the events that the organization implements
+            throughout the school year. The department leads the promotion of member involvement,
+            participation, development and organization growth through the various events it carries out.
+            The department ensures that the organization holds well planned and organized events with
+            the goal of bringing the organization towards its vision.
+okrs:
+  - title: "Improve quality of events"
+    total_progress: "0.7"
+    objectives:
+      - description: "At least 6 – 7 new projects for the whole year (Hackathon/Competition, Training/Workshops, Officer Training, Networking, UX Week, Master class, UST collaboration, UX Roadshow)"
+        progress: "0.2"
+      - description: "At least 30 – 50 participants per event (participants: including outsiders and professionals)"
+        progress: "1.0"
+      - description: "At least 9 Net Promoter Score per event"
+        progress: "0.5"
+      - description: "Create an activity manual"
+        progress: "1.0"
+  - title: "Collaboration"
+    total_progress: "0.0"
+    objectives:
+      - description: "At least 5 – 10 participants are from partner organizations"
+        progress: "0.0"
+      - description: "At least 3 – 4 partner organizations for trainings and workshops (At least one outside organization)"
+        progress: "0.0"
+      - description: "At least 2 events where members benefit from the corporate partnerships"
+        progress: "0.0"

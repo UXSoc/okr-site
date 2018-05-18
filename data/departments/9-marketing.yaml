@@ -1,0 +1,37 @@
+weight: 9
+long_title: "Marketing Department"
+short_title: "Marketing"
+logo: "marketing.png"
+description: >
+            The Marketing Department has the overall responsibility to
+            boost external organizational growth and revenue by promoting
+            the products, events, and services of this organization to
+            its members and potential partner organizations. It is also
+            responsible for contacting and establishing strong relations
+            with organizations inside and outside of the campus. Moreover,
+            it aims to ensure that each event of this organization is
+            backed by different partner organizations and corporate sponsorships.
+okrs:
+  - title: "Complete the Marketing Kit"
+    total_progress: "1.0"
+    objectives:
+      - description: "Create a Marketing Package and Sponsorship Letter Template"
+        progress: "1.0"
+      - description: "Create a Memorandum of Agreement"
+        progress: "1.0"
+      - description: "Create a Sponsorships Database (with at least 500 contact details)"
+        progress: "1.0"
+  - title: "Ensure support for Events initiatives"
+    total_progress: "0.7"
+    objectives:
+      - progress: "n/a"
+        description: >
+                    Provide at least 5 corporate partners for
+                    every major event (major event described
+                    as expecting at least 50 attendees, needing
+                    mobilization outside of campus, or other events
+                    deemed major by the EB) (Provided List of Major
+                    Events by Mr. Pascasio: Hackathon, Master Class,
+                    UX Roadshow)
+      - description: "Provide at least 3 university-related partners for every event (both major and minor)"
+        progress: "0.8"

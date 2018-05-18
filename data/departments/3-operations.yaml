@@ -1,0 +1,41 @@
+weight: 3
+long_title: "Operations Department"
+short_title: "Operations"
+logo: "operations.png"
+description: >
+            The Operations Department ensures that member involvement
+            and evaluations analyses are properly handled. It is headed by
+            the Documentations and Analysis Director who closely works with the
+            other departments of the organization and assesses whether those departments
+            are achieving their objectives. He also maintains the organization’s files and
+            assesses organizational weak spots based on departmental consultations and feedbacks.
+            Under the Documentations and Analysis Director is the Associate Director for Documentations and Analysis
+            and the Associate Director for Member Involvement.
+okrs:
+  - title: "Member involvement system"
+    total_progress: "0.0"
+    objectives:
+      - description: "Continue peer recognition system"
+        progress: "0.0"
+      - description: "Install an attendance tracker for members who are attending events and recognize their achievements/loyalty"
+        progress: "n/a"
+      - description: "80% of all UXSoc Family members were given birthday posters"
+        progress: "n/a"
+      - description: "Schedule individual consultations with EB, AD, and Officers"
+        progress: "n/a"
+  - title: "Improve and maintain evaluations systems"
+    total_progress: "0.8"
+    objectives:
+      - description: "Evaluations were collected from 80% of attendees per event for all events"
+        progress: "0.6"
+      - description: "50% of all events get above 9 average (using Net Promoter Score)"
+        progress: "1.0"
+      - description: "Emotion scale ratings (new for 2017) reach an average of 70% \"Excellent\""
+        progress: "0.7"
+  - title: "Maintain transparency in the organization"
+    total_progress: "1.0"
+    objectives:
+      - description: "Department processes from the nine departments are to be documented"
+        progress: "1.0"
+      - description: "Biweekly updates are regularly biweekly"
+        progress: "n/a"

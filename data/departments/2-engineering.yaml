@@ -1,0 +1,17 @@
+weight: 2
+long_title: "Engineering Department"
+short_title: "Engineering"
+logo: "engineering.png"
+description: >
+            The Engineering Department is the developer pool of the organization.
+            It will focus on the implementation of the products conceptualized by the Consultancy Department.
+            The department will also handle the upkeep of the digital assets of the organization, mainly the blog
+            and the website.
+okrs:
+  - title: "Pique interest in Dev"
+    total_progress: "0.3"
+    objectives:
+      - description: "Observable through Consistency in training workshops"
+        progress: "0.6"
+      - description: "At least 50% makapag pasa"
+        progress: "0.0"

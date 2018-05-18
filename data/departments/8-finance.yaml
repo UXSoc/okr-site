@@ -1,0 +1,30 @@
+weight: 8
+long_title: "Finance Department"
+short_title: "Finance"
+logo: "finance.png"
+description: >
+            The Finance Department is the money management department of
+            the organization - it tracks and records all the financial
+            transactions of every department within the organization.
+            The Finance Department ensures that the organization generates
+            money to fund its projects, support its members’ initiatives
+            and efforts, and cover all the expenses of the organization.
+            The Finance Department promotes honesty, integrity,
+            and transparency in the entirety of its operation.
+okrs:
+  - title: "Track the funds of the organization"
+    total_progress: "0.2"
+    objectives:
+      - description: "Uniform and complete financial tracker for the entire organization."
+        progress: "0.9"
+      - description: "Have a physical and digital (online & offline) copy of the flow of money/receipts."
+        progress: "0.6"
+      - description: "Create a bank account for the organization."
+        progress: "n/a"
+  - title: "Have a profit of P10,000 for the rest of the semester"
+    total_progress: "n/a"
+    objectives:
+      - description: "Nothing less than breakeven per effort."
+        progress: "n/a"
+      - description: "Have at least two fundraisers per semester."
+        progress: "n/a"

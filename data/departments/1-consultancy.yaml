@@ -1,8 +1,38 @@
 weight: 1
-title: "Consultancy"
+long_title: "Consultancy Department"
+short_title: "Consultancy"
+logo: "consultancy.png"
 description: >
             The UX Consultancy and Blog department is the solutions and
             knowledge management center of User Experience Society. It focuses on
             three important areas: the application of UX design methodologies
             through the adoption of a UX consultancy model, the formation of members
             in UX Strategy, and the cultivation of UX knowledge through content strategy.
+okrs:
+  - title: "Consultancy Model"
+    total_progress: "0.1"
+    objectives:
+      - description: "Generate P150,000 in revenue for the organization"
+        progress: "0.1"
+      - description: "Get at least 7 clients for consultancy portfolio"
+        progress: "0.2"
+      - description: "Write 3 case studies (based on top clients)"
+        progress: "0.0"
+  - title: "Content Creation"
+    total_progress: "0.1"
+    objectives:
+      - description: "Get 400 subscriptions for the newsletter"
+        progress: "0.4"
+      - description: "5-10 contributors on the blog"
+        progress: "0.0"
+      - description: "2000 unique views for the official blog a year"
+        progress: "0.0"
+  - title: "Mentorship"
+    total_progress: "0.1"
+    objectives:
+      - description: "Build a mentor pool of at least 15 mentors"
+        progress: "0.2"
+      - description: "At least 8 workshops for the year"
+        progress: "0.0"
+      - description: "Create training curriculum for UXSoc by the end of the first semester"
+        progress: "0.0"

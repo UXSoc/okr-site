@@ -1,0 +1,42 @@
+weight: 4
+long_title: "Branding Department"
+short_title: "Branding"
+logo: "branding.png"
+description: >
+            The Branding and Creatives Department oversees all creative
+            materials and social media accounts of the organization. In order to
+            maintain a consistent image of User Experience Society, the department
+            ensures branding is properly implemented across all projects and
+            products, and collaborates with affected departments. It is also
+            responsible for boosting the organization’s exposure and online presence
+            through beautifully and strategically designed promotional materials.
+okrs:
+  - title: "Successful branding implementation & promotions"
+    total_progress: "0.9"
+    objectives:
+      - description: "All events are branded, and at least 80% of the major events complete the social media and promotions checklist"
+        progress: "1.0"
+      - description: "At least 8/10 average evaluation score for all events"
+        progress: "0.9"
+      - description: "At least 750 organic reach on Facebook for main events (external)"
+        progress: "1.0"
+      - description: "Innovative promotions (introduce social listening, announcements, infographics, & non traditional promotions within the year)"
+        progress: "0.5"
+  - title: "Teach and train students"
+    total_progress: "0.0"
+    objectives:
+      - description: "Educate at least 80 people in branding & creative design through tutorials and workshops"
+        progress: "0.0"
+      - description: "Have at least 5 internal events to teach & train (3 tutorials, 2 workshops) (tie-in with Multimedia)"
+        progress: "0.0"
+      - description: "At least 80% of junior designers become senior designers by the end of the year (to be evaluated by senior designers)"
+        progress: "0.0"
+  - title: "Boost social media following & engagement"
+    total_progress: "0.0"
+    objectives:
+      - description: "Reach 2200 Facebook likes by the end of the year"
+        progress: "n/a"
+      - description: "Reach 300 Twitter followers and at least 10% engagement"
+        progress: "n/a"
+      - description: "Reach 300 Instagram followers"
+        progress: "n/a"
